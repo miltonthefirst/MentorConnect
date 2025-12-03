@@ -1,59 +1,127 @@
-# MentorConnect
+# 🚀 MentorConnect (Frontend)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+> **Current Status:** Phase 1 (Standalone Firebase Mode)  
+> We are currently building the UI using **Firebase** for data/auth. Later, we will migrate data persistence to a Spring Boot Backend.
 
-## Development server
+MentorConnect is an open-source platform designed to connect aspiring developers with mentors for structured, project-based learning.
 
-To start a local development server, run:
+## 🛠 Tech Stack
+
+  * **Framework:** Angular (v20+)
+  * **Styling:** SCSS + [Angular Material / Tailwind - *choose one*]
+  * **Auth/Data:** Firebase (Firestore & Authentication)
+  * **State Management:** RxJS (Services + BehaviorSubjects)
+
+-----
+
+## ⚙️ Prerequisites
+
+Before you start, make sure you have:
+
+1.  **Node.js** (v18.13.0 or higher) - [Download](https://nodejs.org/)
+2.  **Angular CLI** (Globally installed):
+    ```bash
+    npm install -g @angular/cli
+    ```
+3.  **Firebase CLI** (Optional but recommended):
+    ```bash
+    npm install -g firebase-tools
+    ```
+
+-----
+
+## 🏄 Getting Started
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/miltonthefirst/MentorConnect.git
+cd MentorConnect
+npm install
+```
+
+### 2. Environment Setup (Critical!) 🔑
+
+We do not commit API keys to GitHub. You need to create your own environment file.
+
+1.  Copy the example file: `src/environments/environment.example.ts` -> `src/environments/environment.ts`
+2.  Ask the **Team Lead** for the Firebase Configuration keys.
+3.  Paste them into `environment.ts`.
+
+### 3. Run the App
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any source files.
 
-## Code scaffolding
+-----
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📂 Project Structure
 
-```bash
-ng generate component component-name
+We use a **Feature-Based** architecture. Please do not dump everything into a generic `components` folder.
+
+```text
+src/app
+├── core/               # Singletons (AuthService, Guards, Interceptors)
+├── shared/             # Reusable UI (Buttons, Loaders, Pipes)
+├── features/           # The actual pages
+│   ├── dashboard/      # Logic for the dashboard view
+│   ├── profile/        # Logic for user profiles
+│   └── auth/           # Login/Register screens
+└── app.routes.ts       # Main routing config
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 🧠 The "Adapter" Pattern
 
-```bash
-ng generate --help
-```
+**Important:** We are designing this to swap the backend later.
 
-## Building
+  * **UI Components** should NEVER import `firebase` directly.
+  * **UI Components** should only call `Services` (e.g., `MentorService`).
+  * **Services** handle the data fetching (currently Firestore).
 
-To build the project run:
+-----
 
-```bash
-ng build
-```
+## 🤝 Contributing
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+We love contributions! Please read our [CONTRIBUTING.md](https://www.google.com/search?q=./CONTRIBUTING.md) to learn about:
 
-## Running unit tests
+  * Our branching strategy (`feat/`, `fix/`)
+  * Commit message conventions
+  * Code style rules
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**Quick Rule:** Never push to `main` directly. Always open a Pull Request (PR).
+
+-----
+
+## 🧪 Running Tests
+
+**Unit Tests** (Karma):
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+**End-to-End Tests**:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+-----
 
-## Additional Resources
+## 📚 Resources for the Team
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  * [Angular Documentation](https://angular.io/docs)
+  * [Firebase Documentation](https://firebase.google.com/docs/web/setup)
+  * [Our Design System / Figma Link] (Add link here)
+
+-----
+
+### 💡 Why these sections matter for your students:
+
+1.  **Current Status:** Stops them from asking "Where is the Java API?" immediately.
+2.  **Prerequisites:** Ensures everyone is on the same Node/Angular version (prevents weird install errors).
+3.  **Environment Setup:** This is the #1 blocker for new devs. Explicitly telling them "You need to ask me for keys" saves hours of debugging.
+4.  **The "Adapter" Pattern:** Reinforces your architectural rule (Services only!) right on the front page.
