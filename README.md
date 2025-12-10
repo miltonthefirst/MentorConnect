@@ -118,10 +118,3 @@ ng e2e
   * [Our Design System / Figma Link] (Add link here)
 
 -----
-
-### 💡 Why these sections matter for your students:
-
-1.  **Current Status:** Stops them from asking "Where is the Java API?" immediately.
-2.  **Prerequisites:** Ensures everyone is on the same Node/Angular version (prevents weird install errors).
-3.  **Environment Setup:** This is the #1 blocker for new devs. Explicitly telling them "You need to ask me for keys" saves hours of debugging.
-4.  **The "Adapter" Pattern:** Reinforces your architectural rule (Services only!) right on the front page.
