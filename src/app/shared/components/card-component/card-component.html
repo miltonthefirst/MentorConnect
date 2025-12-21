@@ -1,0 +1,10 @@
+<div class="bg-dash-card border border-dash-border rounded-2xl p-6 shadow-xl">
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="text-white font-semibold flex items-center gap-2">
+      <ng-content select="[header-icon]"></ng-content>
+      <ng-content select="[header-title]"></ng-content>
+    </h3>
+    <button class="text-dash-text-muted hover:text-white">•••</button>
+  </div>
+  <ng-content></ng-content>
+</div>

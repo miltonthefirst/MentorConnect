@@ -1,0 +1,13 @@
+<div class="relative flex flex-col items-center">
+  <div class="w-20 h-20">
+    <svg class="w-full h-full transform -rotate-90">
+      <circle cx="40" cy="40" r="35" stroke="currentColor" stroke-width="8" fill="transparent" class="text-dash-dark" />
+      <circle cx="40" cy="40" r="35" stroke="currentColor" stroke-width="8" fill="transparent" 
+              [attr.stroke-dasharray]="220"
+              [style.stroke-dashoffset]="220 - (220 * percentage / 100)"
+              class="text-dash-accent transition-all duration-500" />
+    </svg>
+    <span class="absolute inset-0 flex items-center justify-center text-white font-bold">{{percentage}}%</span>
+  </div>
+  <p class="text-xs text-white mt-2 text-center"> {{label}}</p>
+</div>

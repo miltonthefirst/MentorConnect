@@ -1,0 +1,84 @@
+<div class="flex min-h-screen flex-col justify-center bg-dash-dark px-6 py-12 lg:px-8">
+  
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-dash-accent shadow-lg shadow-dash-accent/20">
+      <div class="h-6 w-6 border-4 border-white rounded-sm rotate-45"></div>
+    </div>
+    <h2 class="mt-8 text-center text-3xl font-bold tracking-tight text-white">
+      MENTORCONNECT
+    </h2>
+    <p class="mt-2 text-center text-sm text-dash-muted">
+      Sign in to continue your learning journey
+    </p>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <div class="bg-dash-card border border-dash-border p-8 rounded-2xl shadow-2xl">
+      <form class="space-y-6">
+        
+        <div>
+          <label for="email" class="block text-sm font-medium text-dash-muted">Email address</label>
+          <div class="mt-2">
+            <input 
+              id="email" 
+              type="email" 
+              required 
+              class="block w-full rounded-xl border border-dash-border bg-dash-dark px-4 py-2.5 text-white placeholder:text-gray-600 focus:border-dash-accent focus:ring-1 focus:ring-dash-accent outline-none transition-all sm:text-sm"
+              placeholder="name@company.com">
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm font-medium text-dash-muted">Password</label>
+            <div class="text-sm">
+              <a href="#" class="font-semibold text-dash-accent hover:text-indigo-400 transition">Forgot password?</a>
+            </div>
+          </div>
+          <div class="mt-2">
+            <input 
+              id="password" 
+              type="password" 
+              required 
+              class="block w-full rounded-xl border border-dash-border bg-dash-dark px-4 py-2.5 text-white placeholder:text-gray-600 focus:border-dash-accent focus:ring-1 focus:ring-dash-accent outline-none transition-all sm:text-sm"
+              placeholder="••••••••">
+          </div>
+        </div>
+
+        <div>
+          <button 
+            type="button" 
+            (click)="login()"
+            class="flex w-full justify-center rounded-xl bg-dash-accent px-4 py-3 text-sm font-bold text-white shadow-lg shadow-dash-accent/30 hover:bg-indigo-500 active:scale-[0.98] transition-all duration-200">
+            Sign In
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-8">
+        <div class="relative">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-dash-border"></div>
+          </div>
+          <div class="relative flex justify-center text-xs uppercase">
+            <span class="bg-dash-card px-2 text-dash-muted">Or continue with</span>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <button class="flex items-center justify-center gap-2 rounded-xl border border-dash-border bg-dash-dark px-4 py-2 text-sm font-medium text-white hover:bg-dash-border transition">
+            <span>Google</span>
+          </button>
+          <button class="flex items-center justify-center gap-2 rounded-xl border border-dash-border bg-dash-dark px-4 py-2 text-sm font-medium text-white hover:bg-dash-border transition">
+            <span>Github</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-sm text-dash-muted">
+      Not a member?
+      <a href="#" class="font-semibold text-dash-accent hover:text-indigo-400 transition">Start a new Profile</a>
+    </p>
+  </div>
+</div>
