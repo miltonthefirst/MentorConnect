@@ -1,28 +1,26 @@
 <div
-  class="bg-dash-card-alt border border-dash-border rounded-2xl p-3 shadow-lg transition-shadow duration-300 hover:shadow-2xl max-w-sm">
+  class="bg-dash-card-alt border border-dash-border rounded-lg p-3 shadow-lg transition-shadow duration-300 hover:shadow-lg max-w-sm">
 
   <!-- Image -->
   <figure class="mb-2">
-    <img src="{{courseModuleImage}}" alt="Watch"
-      class="rounded-xl w-full object-cover" />
+    <img src="{{courseModuleImage}}" alt="Watch" class="rounded-xl w-full object-cover" />
   </figure>
 
   <!-- Card content -->
   <div class="card-body">
-    <h2 class="text-medium font-semibold mb-2 text-gray-900 hover:text-blue-600 transition-colors duration-200">
+    <h2 class="bg-red-400 text-white rounded-full px-4 py-1 text-sm inline-block mb-2">
       {{courseTitle}}
-    </h2> 
+    </h2>
     <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600 transition-colors duration-200">
       {{courseModule}}
-    </h3> 
+    </h3>
 
     <app-progress-bar-component [progress]="courseProgress" class="mb-3"></app-progress-bar-component>
 
     <div class="flex gap-2 items-center text-gray-900 hover:text-gray-500 transition-colors duration-200 mb-2">
-      <img src="{{mentorImage}}" alt="Mentor"
-        class="w-10 h-10 rounded-xl border-2 border-dash-accent">
+      <img src="{{mentorImage}}" alt="Mentor" class="w-10 h-10 rounded-xl border-2 border-dash-accent">
       <div class="flex-col py-0 gap-1 justify-between">
-        <span class="text-medium ">{{mentor}}</span> <br/>
+        <span class="text-medium ">{{mentor}}</span> <br />
         <span class="text-sm ">{{mentorRole}}</span>
       </div>
     </div>
