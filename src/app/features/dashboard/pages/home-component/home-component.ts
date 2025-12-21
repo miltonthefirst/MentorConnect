@@ -38,10 +38,34 @@ export interface Mentor {
     ProgressRingComponent,
     SidebarComponent,
     ImageCardComponentComponent,
-],
+  ],
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })
 export class HomeComponent {
+
+  courses: Course[] = [ ];
+
+  mentorName: string = 'John Doe';
+  mentorRole: string = 'Angular Mentor';
+  mentorAvatar: string = 'https://cdn.flyonui.com/fy-assets/components/card/image-6.png'
+  courseProgress: number = 80;
+  courseTitle: string = 'Advanced Angular';
+  courseModule:string = 'Module 1: Getting Started';
+  courseModuleImage: string = 'https://cdn.flyonui.com/fy-assets/components/card/image-6.png'
+
+  ngOnInit() {
+    this.fetchCourses();
+  } 
+  
+  fetchCourses() {    // Simulate fetching data from a server
+    setTimeout(() => {
+      this.courses = [
+        { id: '1', title: 'Introduction to Angular', progress: 75, mentor: 'John Doe', lessonsTotal: 10, lessonsCompleted: 7, color: 'bg-blue-500', image: 'https://via.placeholder.com/150' },
+        { id: '2', title: 'Advanced Angular', progress: 50, mentor: 'Jane Smith', lessonsTotal: 15, lessonsCompleted: 8, color: 'bg-green-500', image: 'https://via.placeholder.com/150' },
+        { id: '3', title: 'Angular Best Practices', progress: 90, mentor: 'Alice Johnson', lessonsTotal: 12, lessonsCompleted: 11, color: 'bg-red-500', image: 'https://via.placeholder.com/150' },
+      ];
+    }, 2000);
+  }
 
 }

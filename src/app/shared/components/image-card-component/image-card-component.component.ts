@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProgressBarComponentComponent } from '../progress-bar-component/progress-bar-component.component';
 
 @Component({
@@ -8,6 +8,13 @@ import { ProgressBarComponentComponent } from '../progress-bar-component/progres
   imports: [ProgressBarComponentComponent,]
 })
 export class ImageCardComponentComponent implements OnInit {
+  @Input() mentor: string = '';
+  @Input() mentorRole: string = '';
+  @Input() mentorImage: string = '';
+  @Input() courseProgress: number = 0;
+  @Input() courseTitle: string = '';
+  @Input() courseModule: string = '';
+  @Input() courseModuleImage: string = '';
 
   constructor() { }
 
