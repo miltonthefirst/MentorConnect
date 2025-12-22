@@ -1,56 +1,29 @@
-<div class="flex h-screen bg-dash-dark text-white font-sans overflow-hidden ">
+<div class="flex h-screen bg-dash-dark text-white font-sans overflow-hidden">
 
-  <!-- Sidebar -->
-  <app-sidebar-component class="hidden lg:block"></app-sidebar-component>
+  <app-sidebar-component></app-sidebar-component>
 
   <main class="flex-1 flex flex-col overflow-y-auto">
 
-    <!-- Navbar -->
     <app-navbar></app-navbar>
-
-    <!-- Content -->
-    <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6">
-
-      <!-- STREAKS -->
-      <app-card-component class="lg:col-span-4">
+    <div class="p-8 grid grid-cols-12 gap-6">
+      <app-card-component class="col-span-4">
         <span header-title>STREAKS</span>
-        <div class="text-3xl sm:text-4xl font-bold py-4">3 ⚡</div>
-        <p class="text-sm text-dash-text-muted">
-          Watch 3 lectures to light up the streak
-        </p>
+        <div class="text-4xl font-bold py-4">3 ⚡</div>
+        <p class="text-sm text-dash-text-muted">Watch 3 lectures to lit up the streak</p>
       </app-card-component>
 
-      <!-- PROGRESS -->
-      <app-card-component class="lg:col-span-8">
+      <app-card-component class="col-span-8">
         <span header-title>PROGRESS</span>
-
-        <div
-          class="flex flex-wrap justify-center sm:justify-around gap-4 py-4"
-        >
-          <app-progress-ring-component
-            [percentage]="75"
-            [label]="'Intro to Programming'"
-          ></app-progress-ring-component>
-
-          <app-progress-ring-component
-            [percentage]="75"
-            [label]="'Nursing dynamics for the elderly'"
-          ></app-progress-ring-component>
-
-          <app-progress-ring-component
-            [percentage]="90"
-            [label]="'Theory of Relativity'"
-          ></app-progress-ring-component>
-
-          <app-progress-ring-component
-            [percentage]="10"
-            [label]="'Quantum Physics'"
-          ></app-progress-ring-component>
+        <div class="flex justify-around py-4">
+          <app-progress-ring-component [percentage]="75" [label]="'Intro to Programming'"></app-progress-ring-component>
+          <app-progress-ring-component [percentage]="75"
+            [label]="'Nursing dynamics for the elderly'"></app-progress-ring-component>
+          <app-progress-ring-component [percentage]="90" [label]="'Theory of Relativity'"></app-progress-ring-component>
+          <app-progress-ring-component [percentage]="10" [label]="'Quantum Physics'"></app-progress-ring-component>
         </div>
       </app-card-component>
 
-      <!-- SCHEDULE -->
-      <app-card-component class="lg:col-span-4">
+      <app-card-component class="col-span-4">
         <span header-title>SCHEDULE</span>
       </app-card-component>
 
@@ -58,23 +31,17 @@
       <app-card-component class="lg:col-span-8">
         <span header-title>CONTINUE LEARNING</span>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mt-4"
-        >
-          <app-image-card-component
-            *ngFor="let item of courses; trackBy: trackById"
-            [mentor]="item.mentor.name"
-            [mentorRole]="item.mentor.role"
-            [mentorImage]="item.mentor.avatar"
-            [courseProgress]="item.progress"
-            [courseTitle]="item.title"
-            [courseModule]="item.currentModule"
-            [courseModuleImage]="item.thumbnail"
-          >
-          </app-image-card-component>
+        <div class="mt-4 overflow-x-auto scrollbar-hide">
+          <div class="flex space-x-4">
+            <app-image-card-component *ngFor="let item of courses; trackBy: trackById" [mentor]="item.mentor.name"
+              [mentorRole]="item.mentor.role" [mentorImage]="item.mentor.avatar" [courseProgress]="item.progress"
+              [courseTitle]="item.title" [courseModule]="item.currentModule" [courseModuleImage]="item.thumbnail"
+              class="flex-shrink-0 w-64">
+            </app-image-card-component>
+          </div>
         </div>
       </app-card-component>
 
-    </div>
+    </div> <!-- end of grid container -->
   </main>
 </div>
