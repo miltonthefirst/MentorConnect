@@ -27,6 +27,11 @@ export interface Course {
   mentor: Mentor;
 }
 
+interface StreakDay {
+  label: string;
+  isCompleted: boolean;
+}
+
 /* =======================
    COMPONENT
 ======================= */
@@ -100,6 +105,17 @@ export class HomeComponent {
         isFollowed: false,
       },
     },
+  ];
+// The current streak count
+  streakCount: number = 3;
+
+  // The status for each day of the week
+  days: StreakDay[] = [
+    { label: 'M', isCompleted: true },
+    { label: 'T', isCompleted: true },
+    { label: 'W', isCompleted: true },
+    { label: 'Th', isCompleted: false },
+    { label: 'F', isCompleted: false },
   ];
 
   trackById(index: number, course: Course): string {

@@ -6,11 +6,39 @@
 
     <app-navbar></app-navbar>
     <div class="p-8 grid grid-cols-12 gap-6">
-      <app-card-component class="col-span-4">
-        <span header-title>STREAKS</span>
-        <div class="text-4xl font-bold py-4">3 ⚡</div>
-        <p class="text-sm text-dash-text-muted">Watch 3 lectures to lit up the streak</p>
-      </app-card-component>
+     <app-card-component class="col-span-4 bg-[#141432] text-white rounded-3xl p-6 block">
+  <div class="flex justify-between items-start mb-8">
+    <div class="flex items-center gap-2 text-[10px] font-black tracking-widest text-gray-400">
+      <span class="text-yellow-500 text-sm">⚡</span> STREAKS
+    </div>
+    <div class="text-gray-500 font-bold tracking-tighter">•••</div>
+  </div>
+
+  <div class="mb-6">
+    <div class="text-5xl font-bold flex items-center gap-1 mb-4">
+      {{ streakCount }} <span class="text-2xl text-yellow-500">⚡</span>
+    </div>
+    <p class="text-sm text-gray-400 max-w-[200px] leading-snug">
+      Watch 3 lectures or submit an assignment to lit up the streak
+    </p>
+  </div>
+
+  <div class="flex justify-between items-center max-w-[280px]">
+    <div *ngFor="let day of days" class="flex flex-col items-center gap-2">
+      
+      <div 
+        [ngClass]="day.isCompleted 
+          ? 'bg-[#FFD566] text-[#141432] border-transparent' 
+          : 'bg-transparent border-[1.5px] border-gray-600 text-gray-400'"
+        class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+      >
+        <span class="text-xs">⚡</span>
+      </div>
+
+      <span class="text-[11px] font-bold text-gray-300">{{ day.label }}</span>
+    </div>
+  </div>
+</app-card-component>
 
       <app-card-component class="col-span-8">
         <span header-title>PROGRESS</span>
