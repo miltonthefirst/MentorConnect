@@ -15,11 +15,7 @@
       <app-card-component class="col-span-8">
         <span header-title>PROGRESS</span>
         <div class="flex justify-around py-4">
-          <app-progress-ring-component [percentage]="75" [label]="'Intro to Programming'"></app-progress-ring-component>
-          <app-progress-ring-component [percentage]="75"
-            [label]="'Nursing dynamics for the elderly'"></app-progress-ring-component>
-          <app-progress-ring-component [percentage]="90" [label]="'Theory of Relativity'"></app-progress-ring-component>
-          <app-progress-ring-component [percentage]="10" [label]="'Quantum Physics'"></app-progress-ring-component>
+          <app-progress-ring-component *ngFor="let course of courses; trackBy: trackById" [percentage]="course.progress" [label]="course.title"></app-progress-ring-component>
         </div>
       </app-card-component>
 
