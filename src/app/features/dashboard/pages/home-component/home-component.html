@@ -1,0 +1,71 @@
+<div class="flex h-screen bg-dash-dark text-white font-sans overflow-hidden">
+
+  <app-sidebar-component></app-sidebar-component>
+
+  <main class="flex-1 flex flex-col overflow-y-auto">
+
+    <app-navbar></app-navbar>
+    <div class="p-8 grid grid-cols-12 gap-6">
+     <app-card-component class="col-span-4 bg-[#141432] text-white rounded-3xl p-6 block">
+  <div class="flex justify-between items-start mb-8">
+    <div class="flex items-center gap-2 text-[10px] font-black tracking-widest text-gray-400">
+      <span class="text-yellow-500 text-sm">⚡</span> STREAKS
+    </div>
+    <div class="text-gray-500 font-bold tracking-tighter">•••</div>
+  </div>
+
+  <div class="mb-6">
+    <div class="text-5xl font-bold flex items-center gap-1 mb-4">
+      {{ streakCount }} <span class="text-2xl text-yellow-500">⚡</span>
+    </div>
+    <p class="text-sm text-gray-400 max-w-[200px] leading-snug">
+      Watch 3 lectures or submit an assignment to lit up the streak
+    </p>
+  </div>
+
+  <div class="flex justify-between items-center max-w-[280px]">
+    <div *ngFor="let day of days" class="flex flex-col items-center gap-2">
+      
+      <div 
+        [ngClass]="day.isCompleted 
+          ? 'bg-[#FFD566] text-[#141432] border-transparent' 
+          : 'bg-transparent border-[1.5px] border-gray-600 text-gray-400'"
+        class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+      >
+        <span class="text-xs">⚡</span>
+      </div>
+
+      <span class="text-[11px] font-bold text-gray-300">{{ day.label }}</span>
+    </div>
+  </div>
+</app-card-component>
+
+      <app-card-component class="col-span-8">
+        <span header-title>PROGRESS</span>
+        <div class="flex justify-around py-4">
+          <app-progress-ring-component *ngFor="let course of courses; trackBy: trackById" [percentage]="course.progress" [label]="course.title"></app-progress-ring-component>
+        </div>
+      </app-card-component>
+
+      <app-card-component class="col-span-4">
+        <span header-title>SCHEDULE</span>
+      </app-card-component>
+
+      <!-- CONTINUE LEARNING -->
+      <app-card-component class="lg:col-span-8">
+        <span header-title>CONTINUE LEARNING</span>
+
+        <div class="mt-4 overflow-x-auto scrollbar-hide">
+          <div class="flex space-x-4">
+            <app-image-card-component *ngFor="let item of courses; trackBy: trackById" [mentor]="item.mentor.name"
+              [mentorRole]="item.mentor.role" [mentorImage]="item.mentor.avatar" [courseProgress]="item.progress"
+              [courseTitle]="item.title" [courseModule]="item.currentModule" [courseModuleImage]="item.thumbnail"
+              class="flex-shrink-0 w-64">
+            </app-image-card-component>
+          </div>
+        </div>
+      </app-card-component>
+
+    </div> <!-- end of grid container -->
+  </main>
+</div>

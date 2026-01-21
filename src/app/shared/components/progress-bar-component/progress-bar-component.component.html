@@ -1,0 +1,6 @@
+<div class="flex items-center gap-2 mb-2">
+  <div class="h-1 rounded-full transition-all duration-500" [class.bg-amber-500]="progress < 50"
+    [class.bg-blue-600]="progress >= 50 && progress < 80" [class.bg-green-600]="progress >= 80"
+    [style.width.%]="progress"></div>
+  <span class="text-xs text-blue-600 font-medium">{{ progress }}%</span>
+</div>

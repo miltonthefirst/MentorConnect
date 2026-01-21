@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
+/* If using Tailwind v4, this imports your theme variables */
 @theme {
-  --color-primary-50: #fbf7eb;
-  --color-primary-100: #f6ebcb;
-  --color-primary-200: #eed69a;
-  --color-primary-300: #e4b95e;
-  --color-primary-400: #db9e34;
-  --color-primary-500: #cb8927;
-  --color-primary-600: #af691f;
-  --color-primary-700: #8c4c1c;
-  --color-primary-800: #753e1e;
-  --color-primary-900: #64351f;
-  --color-primary-950: #3a1a0e;
+  --color-dash-dark: #0f0f1e;
+  --color-dash-sidebar: #16162d;
+  --color-dash-card: #1c1c36;
+  --color-dash-card-alt: #afc1d6;
+  --color-dash-accent: #7064f5;
+  --color-dash-border: #2d2d4d;
+  --color-dash-muted: #8e8ea1;
+}
+
+@layer base {
+  body {
+    @apply bg-dash-dark text-white antialiased;
+    margin: 0;
+  }
 }
