@@ -1,19 +1,7 @@
 @import "tailwindcss";
 
-/* If using Tailwind v4, this imports your theme variables */
-@theme {
-  --color-dash-dark: #0f0f1e;
-  --color-dash-sidebar: #16162d;
-  --color-dash-card: #1c1c36;
-  --color-dash-card-alt: #afc1d6;
-  --color-dash-accent: #7064f5;
-  --color-dash-border: #2d2d4d;
-  --color-dash-muted: #8e8ea1;
-}
-
 @layer base {
   body {
-    @apply bg-dash-dark text-white antialiased;
-    margin: 0;
+    background-color: #f8fafc;
   }
 }
