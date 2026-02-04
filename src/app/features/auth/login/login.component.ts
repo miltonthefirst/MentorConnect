@@ -7,12 +7,13 @@ import { CommonModule } from '@angular/common';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  template: '<h1>Login Page (inline)</h1> <p>Working!</p>',
+  styles: ['h1 { color:blue; } p {font-size: 1.2rem; }']
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isLoading = false;
+  
   errorMessage = '';
   showPassword = false;
 
