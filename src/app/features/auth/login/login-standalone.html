@@ -1,340 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MentorConnect</title>
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d3561 100%);
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .login-container {
-        background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
-        padding: 48px 40px;
-        border-radius: 24px;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-        width: 100%;
-        max-width: 440px;
-        animation: slideUp 0.5s ease-out;
-        border: 1px solid rgba(0, 172, 193, 0.2);
-    }
-
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .logo-section {
-        text-align: center;
-        margin-bottom: 32px;
-    }
-
-    .logo-section h1 {
-        margin: 0;
-        font-size: 36px;
-        font-weight: 800;
-        background: linear-gradient(135deg, #00d4ff 0%, #00acc1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        letter-spacing: -0.5px;
-    }
-
-    .logo-section .tagline {
-        margin: 8px 0 0 0;
-        color: #a0aec0;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    h2 {
-        margin: 0 0 8px 0;
-        color: #ffffff;
-        text-align: center;
-        font-size: 26px;
-        font-weight: 700;
-    }
-
-    .subtitle {
-        text-align: center;
-        color: #a0aec0;
-        margin: 0 0 32px 0;
-        font-size: 15px;
-    }
-
-    .social-login {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 24px;
-    }
-
-    .social-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        width: 100%;
-        padding: 14px;
-        border: 2px solid #3d3d5c;
-        border-radius: 12px;
-        background: #2a2a3e;
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .social-btn:hover {
-        border-color: #00d4ff;
-        background: #353550;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
-    }
-
-    .divider {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin: 28px 0;
-        color: #718096;
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .divider::before,
-    .divider::after {
-        content: '';
-        flex: 1;
-        border-bottom: 2px solid #3d3d5c;
-    }
-
-    .divider span {
-        padding: 0 16px;
-    }
-
-    .form-group {
-        margin-bottom: 22px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        color: #e2e8f0;
-        font-weight: 600;
-        font-size: 14px;
-    }
-
-    .input-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    .input-wrapper svg {
-        position: absolute;
-        left: 16px;
-        color: #718096;
-    }
-
-    .input-wrapper input {
-        width: 100%;
-        padding: 14px 16px 14px 46px;
-        border: 2px solid #3d3d5c;
-        border-radius: 12px;
-        font-size: 15px;
-        transition: all 0.3s;
-        background: #353550;
-        color: #ffffff;
-    }
-
-    .input-wrapper input::placeholder {
-        color: #718096;
-    }
-
-    .input-wrapper input:focus {
-        outline: none;
-        border-color: #00d4ff;
-        background: #2a2a3e;
-        box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
-    }
-
-    .toggle-password {
-        position: absolute;
-        right: 16px;
-        background: none;
-        border: none;
-        color: #718096;
-        cursor: pointer;
-        padding: 4px;
-        display: flex;
-        align-items: center;
-        transition: color 0.3s;
-    }
-
-    .toggle-password:hover {
-        color: #00d4ff;
-    }
-
-    .error-message {
-        display: none;
-        color: #fc8181;
-        font-size: 12px;
-        margin-top: 6px;
-        margin-left: 4px;
-        font-weight: 500;
-    }
-
-    .form-options {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 26px;
-        font-size: 14px;
-    }
-
-    .checkbox-container {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        color: #a0aec0;
-        font-weight: 500;
-    }
-
-    .checkbox-container input {
-        margin-right: 8px;
-        cursor: pointer;
-        accent-color: #00d4ff;
-    }
-
-    .forgot-link {
-        color: #00d4ff;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .forgot-link:hover {
-        color: #00acc1;
-        text-decoration: underline;
-    }
-
-    .alert-error {
-        display: none;
-        align-items: center;
-        gap: 10px;
-        background-color: rgba(252, 129, 129, 0.1);
-        color: #fc8181;
-        padding: 12px 16px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        font-size: 13px;
-        border: 2px solid rgba(252, 129, 129, 0.3);
-        font-weight: 500;
-    }
-
-    .login-btn {
-        width: 100%;
-        padding: 16px;
-        background: linear-gradient(135deg, #00d4ff 0%, #00acc1 100%);
-        color: #0a0e27;
-        border: none;
-        border-radius: 12px;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
-    }
-
-    .login-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6);
-    }
-
-    .login-btn:active {
-        transform: translateY(0);
-    }
-
-    .signup-section {
-        text-align: center;
-        margin-top: 28px;
-        padding-top: 28px;
-        border-top: 2px solid #3d3d5c;
-    }
-
-    .signup-section p {
-        margin: 0;
-        color: #a0aec0;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .signup-link {
-        color: #00d4ff;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .signup-link:hover {
-        color: #00acc1;
-        text-decoration: underline;
-    }
-
-    .terms {
-        text-align: center;
-        margin-top: 24px;
-        color: #718096;
-        font-size: 12px;
-        line-height: 1.6;
-    }
-
-    .terms a {
-        color: #00d4ff;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .terms a:hover {
-        text-decoration: underline;
-    }
-
-    @media (max-width: 480px) {
-        .login-container {
-            padding: 32px 24px;
-        }
-
-        h2 {
-            font-size: 22px;
-        }
-
-        .logo-section h1 {
-            font-size: 30px;
-        }
-    }
-</style>
-</head>
-<body>
-    <div class="login-container">
+<div class="login-container">
         <div class="logo-section">
             <h1>MentorConnect</h1>
             <p class="tagline">Connect. Learn. Grow.</p>
@@ -344,7 +8,7 @@
         <p class="subtitle">Sign in to continue your journey</p>
 
         <div class="social-login">
-            <button class="social-btn google-btn" onclick="loginWithGoogle()">
+            <button type="button" class="social-btn google-btn" (click)="loginWithGoogle()">
                 <svg width="18" height="18" viewBox="0 0 18 18">
                     <path fill="#4285F4" d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18Z"/>
                     <path fill="#34A853" d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17Z"/>
@@ -354,14 +18,14 @@
                 Continue with Google
             </button>
 
-            <button class="social-btn github-btn" onclick="loginWithGithub()">
+            <button type="button" class="social-btn github-btn" (click)="loginWithGithub()">
                 <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                 </svg>
                 Continue with GitHub
             </button>
 
-            <button class="social-btn facebook-btn" onclick="loginWithFacebook()">
+            <button type="button" class="social-btn facebook-btn" (click)="loginWithFacebook()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
@@ -373,7 +37,7 @@
             <span>OR</span>
         </div>
 
-        <form id="loginForm" onsubmit="handleLogin(event)">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <div class="input-wrapper">
@@ -384,10 +48,11 @@
                         type="email" 
                         id="email" 
                         name="email"
+                        formControlName="email"
                         placeholder="name@example.com"
                         required>
                 </div>
-                <span class="error-message" id="emailError">Please enter a valid email</span>
+                <span class="error-message" *ngIf="email?.invalid && email?.touched">Please enter a valid email</span>
             </div>
 
             <div class="form-group">
@@ -397,38 +62,46 @@
                         <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
                     </svg>
                     <input 
-                        type="password" 
+                        [type]="showPassword ? 'text' : 'password'"
                         id="password" 
                         name="password"
+                        formControlName="password"
                         placeholder="Enter your password"
                         required
                         minlength="6">
-                    <button type="button" class="toggle-password" onclick="togglePassword()">
-                        <svg id="eyeIcon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                    <button type="button" class="toggle-password" (click)="togglePassword()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <ng-container *ngIf="showPassword; else showPasswordOff">
+                                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+                                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
+                                <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
+                            </ng-container>
+                            <ng-template #showPasswordOff>
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                            </ng-template>
                         </svg>
                     </button>
                 </div>
-                <span class="error-message" id="passwordError">Password must be at least 6 characters</span>
+                <span class="error-message" *ngIf="password?.invalid && password?.touched">Password must be at least 6 characters</span>
             </div>
 
             <div class="form-options">
                 <label class="checkbox-container">
-                    <input type="checkbox" name="rememberMe">
+                    <input type="checkbox" name="rememberMe" formControlName="rememberMe">
                     Remember me
                 </label>
                 <a href="#" class="forgot-link">Forgot password?</a>
             </div>
 
-            <div class="alert-error" id="errorAlert">
+            <div class="alert-error" *ngIf="errorMessage">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                     <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>
-                <span id="errorMessage"></span>
+                <span>{{ errorMessage }}</span>
             </div>
 
-            <button type="submit" class="login-btn" id="loginBtn">
+            <button type="submit" class="login-btn" [disabled]="isLoading">
                 Sign In
             </button>
         </form>
@@ -440,50 +113,3 @@
         <p class="terms">By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
         </p>
     </div>
-
-    <script>
-        let showPassword = false;
-
-        function togglePassword() {
-            showPassword = !showPassword;
-            const passwordInput = document.getElementById('password');
-            const eyeIcon = document.getElementById('eyeIcon');
-            
-            passwordInput.type = showPassword ? 'text' : 'password';
-
-            if (showPassword) {
-                eyeIcon.innerHTML = '<path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/><path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/><path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>';
-                } else {
-                eyeIcon.innerHTML = '<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>';
-            }
-        }
-
-         function handleLogin(event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const rememberMe = document.querySelector('input[name="rememberMe"]').checked;
-
-            console.log('Login attempt:', { email, password, rememberMe });
-
-            alert(` Login Successful!\n\nEmail: ${email}\nRemember Me: ${rememberMe}\n\n(Slate & Teal Theme)`);
-        }
-
-        function loginWithGoogle() {
-            console.log('Google login initiated');
-            alert('🔵 Google Login (Slate & Teal Theme)');
-        }
-
-        function loginWithGithub() {
-            console.log('GitHub login initiated');
-            alert('⚫ GitHub Login (Slate & Teal Theme)');
-        }
-
-         function loginWithFacebook() {
-            console.log('Facebook login initiated');
-            alert('🔵 Facebook Login (Slate & Teal Theme)');
-        }
-    </script>
-</body>
-</html>

@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  template: '<h1>Login Page (inline)</h1> <p>Working!</p>',
+  templateUrl: './login-standalone.html',
   styles: ['h1 { color:blue; } p {font-size: 1.2rem; }']
 })
 export class LoginComponent implements OnInit {
