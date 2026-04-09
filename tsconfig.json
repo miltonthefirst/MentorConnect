@@ -1,0 +1,88 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "auth": ["./dist/auth"],
+      "data-access": ["./dist/data-access"],
+      "discovery": ["./dist/discovery"],
+      "ui": ["./dist/ui"],
+      "utils": ["./dist/utils"]
+    },
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/mentee-portal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/mentee-portal/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/mentor-portal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/mentor-portal/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/admin-portal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/admin-portal/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/website/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/website/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/auth/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/auth/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/data-access/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/data-access/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/utils/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/utils/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/discovery/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/discovery/tsconfig.spec.json"
+    }
+  ]
+}

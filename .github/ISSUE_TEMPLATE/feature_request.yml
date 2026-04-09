@@ -1,0 +1,58 @@
+name: ✨ Feature Request
+description: Propose a new feature or enhancement.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Great idea! Before submitting, please check that a similar request doesn't already exist.
+
+  - type: dropdown
+    id: project
+    attributes:
+      label: Which app or library does this relate to?
+      multiple: true
+      options:
+        - website
+        - mentee-portal
+        - mentor-portal
+        - admin-portal
+        - auth (library)
+        - data-access (library)
+        - ui (library)
+        - utils (library)
+        - discovery (library)
+        - New library / cross-cutting
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      placeholder: |
+        Is your feature request related to a problem?
+        e.g. "As a mentee, I can't filter mentors by skill, which makes discovery frustrating."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      placeholder: |
+        Describe the feature you'd like. Be as specific as possible.
+        Include UI mockups or diagrams if helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: Any other approaches you thought of, and why they're worse.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
