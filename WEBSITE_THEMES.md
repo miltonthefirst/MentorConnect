@@ -3,6 +3,7 @@
 ## Scope of Search
 
 This document was built by reviewing:
+
 - `src/index.html`
 - `src/styles.css`
 - `src/app/app.html`
@@ -19,9 +20,11 @@ No separate Tailwind config file was found, and no additional theme files were f
 Current UI appears to implement a light, indigo-accented authentication theme built primarily with Tailwind utility classes.
 
 ### Theme Name
+
 - **Indigo Auth (Current)**
 
 ### Visual Characteristics
+
 - **Typography:** Google Font `Poppins` is loaded globally.
 - **Primary accent:** Indigo (`bg-indigo-500`, `text-indigo-400`, `hover:text-indigo-300`, `focus:outline-indigo-500`).
 - **Surface/input style:** Semi-transparent white inputs (`bg-white/5`) with subtle outlines.
@@ -31,6 +34,7 @@ Current UI appears to implement a light, indigo-accented authentication theme bu
 ## Extracted Theme Tokens (From Current Markup)
 
 ### Color Tokens in Use
+
 - `indigo-500`
 - `indigo-400`
 - `indigo-300`
@@ -43,12 +47,14 @@ Current UI appears to implement a light, indigo-accented authentication theme bu
 - `gray-500`
 
 ### State Tokens in Use
+
 - `hover:bg-indigo-400`
 - `hover:text-indigo-300`
 - `focus:outline-indigo-500`
 - `focus-visible:outline-indigo-500`
 
 ### Shape/Spacing Language
+
 - Rounded controls: `rounded-md`
 - Vertical spacing: `mt-10`, `space-y-6`
 - Compact control rhythm: `px-3 py-1.5`
