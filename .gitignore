@@ -1,0 +1,60 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# Firebase
+.firebaserc
+.firebase/
+
+# Emulator seed data (generated; directory tracked via .gitkeep)
+/emulator-data/*
+!/emulator-data/.gitkeep
+
+# Environment files with real Firebase keys — NEVER commit these
+/environments/environment.dev.ts
+/environments/environment.test.ts
+/environments/environment.prod.ts
+
+# Wrongly placed emulator-data inside environments/ (safe to delete)
+/environments/emulator-data/
+
+# System files
+.DS_Store
+Thumbs.db
