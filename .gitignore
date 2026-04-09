@@ -39,6 +39,22 @@ testem.log
 /typings
 __screenshots__/
 
+# Firebase
+.firebaserc
+.firebase/
+
+# Emulator seed data (generated; directory tracked via .gitkeep)
+/emulator-data/*
+!/emulator-data/.gitkeep
+
+# Environment files with real Firebase keys — NEVER commit these
+/environments/environment.dev.ts
+/environments/environment.test.ts
+/environments/environment.prod.ts
+
+# Wrongly placed emulator-data inside environments/ (safe to delete)
+/environments/emulator-data/
+
 # System files
 .DS_Store
 Thumbs.db

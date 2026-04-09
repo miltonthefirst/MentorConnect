@@ -3,11 +3,41 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+
+    "-- EMULATORS --": "",
+    "emulators": "firebase emulators:start --project=demo-mentor-connect --import=./emulator-data --export-on-exit=./emulator-data",
+
+    "-- SERVE (individual) --": "",
+    "start:website": "ng serve website --port=4200",
+    "start:mentee": "ng serve mentee-portal --port=4201",
+    "start:mentor": "ng serve mentor-portal --port=4202",
+    "start:admin": "ng serve admin-portal --port=4203",
+
+    "-- SERVE (all portals) --": "",
+    "start:all": "concurrently -n website,mentee,mentor,admin -c cyan,green,blue,yellow \"npm run start:website\" \"npm run start:mentee\" \"npm run start:mentor\" \"npm run start:admin\"",
+
+    "-- BUILD --": "",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "serve:ssr:website": "node dist/website/server/server.mjs",
+
+    "-- TEST (all) --": "",
     "test": "ng test",
-    "serve:ssr:website": "node dist/website/server/server.mjs"
+
+    "-- TEST (individual) --": "",
+    "test:website": "ng test website",
+    "test:mentee": "ng test mentee-portal",
+    "test:mentor": "ng test mentor-portal",
+    "test:admin": "ng test admin-portal",
+    "test:auth": "ng test auth",
+    "test:ui": "ng test ui",
+    "test:data-access": "ng test data-access",
+    "test:utils": "ng test utils",
+    "test:discovery": "ng test discovery",
+
+    "-- FORMAT --": "",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "private": true,
   "packageManager": "npm@11.12.1",
@@ -31,6 +61,7 @@
     "@tailwindcss/postcss": "^4.1.12",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "concurrently": "^9.2.1",
     "jsdom": "^28.0.0",
     "ng-packagr": "^21.2.0",
     "postcss": "^8.5.3",

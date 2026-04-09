@@ -1,0 +1,78 @@
+name: 🐞 Bug Report
+description: Something is broken or behaving unexpectedly.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this! The more detail you provide, the faster we can fix it.
+
+  - type: dropdown
+    id: project
+    attributes:
+      label: Which app or library is affected?
+      multiple: true
+      options:
+        - website
+        - mentee-portal
+        - mentor-portal
+        - admin-portal
+        - auth (library)
+        - data-access (library)
+        - ui (library)
+        - utils (library)
+        - discovery (library)
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      placeholder: A clear, concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      placeholder: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      placeholder: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / screen recordings
+      description: Drag and drop images or GIFs here if the bug is visual.
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS: [e.g. Windows 11 / macOS 14]
+        - Browser: [e.g. Chrome 124]
+        - Node version: [e.g. 20.11.0]
+        - Angular CLI version: [e.g. 21.2.6]

@@ -1,0 +1,76 @@
+name: 🧠 Architecture / Design Proposal
+description: Propose a technical approach before you start building. Read CONTRIBUTING.md for the Proposal Process.
+labels: ["discussion", "architecture"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when you're about to build something complex and want team alignment first.
+
+        **Before opening this issue:**
+        - [ ] I have read the "Proposal Process" section in [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md)
+        - [ ] I have checked there isn't already an open proposal for this topic
+
+  - type: input
+    id: title
+    attributes:
+      label: One-line summary
+      placeholder: e.g. "How should we handle global auth state across portals?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: project
+    attributes:
+      label: Affected project(s)
+      multiple: true
+      options:
+        - website
+        - mentee-portal
+        - mentor-portal
+        - admin-portal
+        - auth (library)
+        - data-access (library)
+        - ui (library)
+        - utils (library)
+        - discovery (library)
+        - Cross-cutting / whole workspace
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & problem statement
+      placeholder: |
+        Why are we making this decision now? What happens if we don't?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      placeholder: |
+        Describe your recommended solution in enough detail for the team to review it.
+        Include code snippets, diagrams, or links to relevant docs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Tradeoffs / risks
+      placeholder: |
+        What are the downsides of this approach?
+        Are there alternatives you considered and rejected?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Implementation tasks (if approved)
+      placeholder: |
+        - [ ] Task 1
+        - [ ] Task 2
