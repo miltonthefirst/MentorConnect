@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'mc-data-access',
   imports: [],
   template: ` <p>data-access works!</p> `,
-  styles: ``,
+  styles: [],
 })
 export class DataAccess {}

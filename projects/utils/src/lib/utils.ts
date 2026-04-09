@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'mc-utils',
   imports: [],
   template: ` <p>utils works!</p> `,
-  styles: ``,
+  styles: [],
 })
 export class Utils {}

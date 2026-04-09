@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'mc-discovery',
   imports: [],
   template: ` <p>discovery works!</p> `,
-  styles: ``,
+  styles: [],
 })
 export class Discovery {}
