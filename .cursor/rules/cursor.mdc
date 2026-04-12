@@ -30,10 +30,15 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 ### Components
 
 - Keep components small and focused on a single responsibility
+- Every component must use 4 separate files: `.ts`, `.html`, `.scss`, and `.spec.ts`.
+- Do NOT use inline templates.
+- Do NOT use inline styles.
+- Every page component must be prefixed with the portal name and suffixed with `page`.
+- Examples of valid page names: `admin-dashboard-page`, `mentee-dashboard-page`, `mentor-dashboard-page`, `website-home-page`
+- Page folders should match the page component base name.
 - Use `input()` and `output()` functions instead of decorators
 - Use `computed()` for derived state
 - Set `changeDetection: ChangeDetectionStrategy.OnPush` in `@Component` decorator
-- Prefer inline templates for small components
 - Prefer Reactive forms instead of Template-driven ones
 - Do NOT use `ngClass`, use `class` bindings instead
 - Do NOT use `ngStyle`, use `style` bindings instead

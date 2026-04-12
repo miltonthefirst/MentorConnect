@@ -3,27 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-
     "-- EMULATORS --": "",
     "emulators": "firebase emulators:start --project=demo-mentor-connect --import=./emulator-data --export-on-exit=./emulator-data",
-
     "-- SERVE (individual) --": "",
     "start:website": "ng serve website --port=4200",
     "start:mentee": "ng serve mentee-portal --port=4201",
     "start:mentor": "ng serve mentor-portal --port=4202",
     "start:admin": "ng serve admin-portal --port=4203",
-
     "-- SERVE (all portals) --": "",
     "start:all": "concurrently -n website,mentee,mentor,admin -c cyan,green,blue,yellow \"npm run start:website\" \"npm run start:mentee\" \"npm run start:mentor\" \"npm run start:admin\"",
-
     "-- BUILD --": "",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "serve:ssr:website": "node dist/website/server/server.mjs",
-
     "-- TEST (all) --": "",
     "test": "ng test",
-
     "-- TEST (individual) --": "",
     "test:website": "ng test website",
     "test:mentee": "ng test mentee-portal",
@@ -34,7 +28,6 @@
     "test:data-access": "ng test data-access",
     "test:utils": "ng test utils",
     "test:discovery": "ng test discovery",
-
     "-- FORMAT --": "",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -51,6 +44,7 @@
     "@angular/router": "^21.2.0",
     "@angular/ssr": "^21.2.6",
     "express": "^5.1.0",
+    "firebase": "^12.12.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

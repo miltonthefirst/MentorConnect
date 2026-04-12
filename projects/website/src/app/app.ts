@@ -1,12 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './layout/header.component';
+import { FooterComponent } from './layout/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  template: `
+    <app-header />
+    <main>
+      <router-outlet />
+    </main>
+    <app-footer />
+  `,
 })
-export class App {
-  protected readonly title = signal('website');
-}
+export class App {}

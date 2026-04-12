@@ -1,0 +1,46 @@
+<div class="min-h-screen bg-surface-50">
+  <header
+    class="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-surface-200 bg-white px-4 sm:px-6"
+  >
+    <div class="flex items-center gap-3">
+      <div
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white"
+      >
+        M
+      </div>
+      <span class="text-lg font-semibold text-surface-900">Mentor Portal</span>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <span class="hidden text-sm text-surface-600 sm:inline">
+        {{ currentUser()?.displayName || currentUser()?.email }}
+      </span>
+      <button
+        (click)="onLogout()"
+        class="rounded-lg border border-surface-300 px-4 py-2 text-sm font-medium text-surface-600 transition-colors hover:bg-surface-50 hover:text-surface-900"
+      >
+        Sign out
+      </button>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
+    <h1 class="mb-2 text-2xl font-bold text-surface-900">Welcome back!</h1>
+    <p class="mb-8 text-surface-500">Here's your mentor dashboard.</p>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-xl border border-surface-200 bg-white p-6 shadow-card">
+        <div class="mb-1 text-sm font-medium text-surface-500">Active Mentees</div>
+        <div class="text-3xl font-bold text-surface-900">0</div>
+      </div>
+      <div class="rounded-xl border border-surface-200 bg-white p-6 shadow-card">
+        <div class="mb-1 text-sm font-medium text-surface-500">Sessions This Week</div>
+        <div class="text-3xl font-bold text-surface-900">0</div>
+      </div>
+      <div class="rounded-xl border border-surface-200 bg-white p-6 shadow-card">
+        <div class="mb-1 text-sm font-medium text-surface-500">Hours Mentored</div>
+        <div class="text-3xl font-bold text-surface-900">0</div>
+      </div>
+    </div>
+  </main>
+</div>
