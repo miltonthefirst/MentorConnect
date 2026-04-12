@@ -1,6 +1,2 @@
 @import 'tailwindcss';
 @import '../../ui/themes/website.css';
-
-html {
-  scroll-behavior: smooth;
-}

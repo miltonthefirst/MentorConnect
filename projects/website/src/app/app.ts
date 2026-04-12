@@ -7,12 +7,7 @@ import { FooterComponent } from './layout/footer.component';
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterOutlet, HeaderComponent, FooterComponent],
-  template: `
-    <app-header />
-    <main>
-      <router-outlet />
-    </main>
-    <app-footer />
-  `,
+  templateUrl: './app.html',
+  styleUrl: './app.css',
 })
 export class App {}

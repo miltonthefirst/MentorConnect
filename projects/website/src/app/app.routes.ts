@@ -3,24 +3,38 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./pages/home.component').then((m) => m.HomeComponent),
+    loadComponent: () =>
+      import('./pages/website-home-page/website-home-page.component').then(
+        (m) => m.WebsiteHomePage,
+      ),
   },
   {
     path: 'about',
-    loadComponent: () => import('./pages/about.component').then((m) => m.AboutComponent),
+    loadComponent: () =>
+      import('./pages/website-about-page/website-about-page.component').then(
+        (m) => m.WebsiteAboutPage,
+      ),
   },
   {
     path: 'how-it-works',
     loadComponent: () =>
-      import('./pages/how-it-works.component').then((m) => m.HowItWorksComponent),
+      import('./pages/website-how-it-works-page/website-how-it-works-page.component').then(
+        (m) => m.WebsiteHowItWorksPage,
+      ),
   },
   {
     path: 'pricing',
-    loadComponent: () => import('./pages/pricing.component').then((m) => m.PricingComponent),
+    loadComponent: () =>
+      import('./pages/website-pricing-page/website-pricing-page.component').then(
+        (m) => m.WebsitePricingPage,
+      ),
   },
   {
     path: 'contact',
-    loadComponent: () => import('./pages/contact.component').then((m) => m.ContactComponent),
+    loadComponent: () =>
+      import('./pages/website-contact-page/website-contact-page.component').then(
+        (m) => m.WebsiteContactPage,
+      ),
   },
   { path: '**', redirectTo: '' },
 ];
