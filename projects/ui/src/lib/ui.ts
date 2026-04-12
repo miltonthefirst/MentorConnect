@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'mc-ui',
   imports: [],
   template: ` <p>ui works!</p> `,
-  styles: ``,
+  styles: [],
 })
 export class Ui {}

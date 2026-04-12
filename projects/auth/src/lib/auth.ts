@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'mc-auth',
   imports: [],
   template: ` <p>auth works!</p> `,
-  styles: ``,
+  styles: [],
 })
 export class Auth {}
