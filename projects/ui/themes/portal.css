@@ -1,0 +1,39 @@
+@import './base.css';
+
+/* ─── Portal-specific tokens ─── */
+@theme {
+  --color-sidebar-bg: var(--color-surface-900);
+  --color-sidebar-text: var(--color-surface-200);
+  --color-sidebar-active: var(--color-brand-500);
+  --color-topbar-bg: #ffffff;
+  --color-topbar-border: var(--color-surface-200);
+  --color-page-bg: var(--color-surface-50);
+  --color-card-bg: #ffffff;
+  --color-card-border: var(--color-surface-200);
+}
+
+/* ─── Portal base styles ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-page-bg);
+  color: var(--color-surface-800);
+}
+
+/* ─── Focus styles for accessibility ─── */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}

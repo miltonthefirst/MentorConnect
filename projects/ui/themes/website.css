@@ -1,0 +1,42 @@
+@import './base.css';
+
+/* ─── Website-specific tokens ─── */
+@theme {
+  --color-hero-from: var(--color-brand-950);
+  --color-hero-via: var(--color-brand-900);
+  --color-hero-to: var(--color-brand-800);
+  --color-nav-bg: rgba(255, 255, 255, 0.8);
+  --color-nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+  --color-footer-bg: var(--color-surface-950);
+  --color-footer-text: var(--color-surface-400);
+  --color-cta-bg: var(--color-accent-500);
+  --color-cta-hover: var(--color-accent-600);
+  --color-cta-text: #ffffff;
+  --color-section-alt: var(--color-surface-50);
+}
+
+/* ─── Website base styles ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--color-surface-800);
+}
+
+/* ─── Focus styles for accessibility ─── */
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}

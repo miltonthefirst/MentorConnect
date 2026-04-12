@@ -1,3 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+@import '../../ui/themes/portal.css';
+
+/* ─── Mentor Portal accent override ─── */
+@theme {
+  --color-portal-accent: var(--color-brand-500);
+  --color-portal-accent-light: var(--color-brand-100);
+}
