@@ -73,7 +73,7 @@ We use automated tools to enforce style, so we don't argue about spaces vs. tabs
 ### Tools
 
 - **Prettier:** Formatting is automatic. Run `npm run format` before committing. CI will fail if formatting is wrong (`npm run format:check`).
-- **ESLint:** *(Future goal — see note below.)*
+- **ESLint:** _(Future goal — see note below.)_
 
 ### Angular Best Practices
 

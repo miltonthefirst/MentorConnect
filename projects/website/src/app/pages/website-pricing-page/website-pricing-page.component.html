@@ -1,5 +1,7 @@
 <!-- Hero -->
-<section class="relative bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 pt-32 pb-20 sm:pt-40 sm:pb-24">
+<section
+  class="relative bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 pt-32 pb-20 sm:pt-40 sm:pb-24"
+>
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
     <span class="text-sm font-semibold text-accent-300 uppercase tracking-wide">Pricing</span>
     <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
@@ -18,13 +20,17 @@
       @for (plan of plans; track plan.name) {
         <div
           class="relative p-8 rounded-2xl border-2 flex flex-col"
-          [class]="plan.featured
-            ? 'border-brand-600 shadow-elevated bg-white'
-            : 'border-surface-200 bg-white'"
+          [class]="
+            plan.featured
+              ? 'border-brand-600 shadow-elevated bg-white'
+              : 'border-surface-200 bg-white'
+          "
         >
           @if (plan.featured) {
             <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-              <span class="inline-flex px-4 py-1 rounded-full bg-brand-600 text-white text-xs font-semibold uppercase tracking-wide">
+              <span
+                class="inline-flex px-4 py-1 rounded-full bg-brand-600 text-white text-xs font-semibold uppercase tracking-wide"
+              >
                 Most Popular
               </span>
             </div>
@@ -43,11 +49,19 @@
           </div>
 
           <a
-            [href]="plan.featured ? '/auth/register' : plan.cta === 'Contact Sales' ? '/contact' : '/auth/register'"
+            [href]="
+              plan.featured
+                ? '/auth/register'
+                : plan.cta === 'Contact Sales'
+                  ? '/contact'
+                  : '/auth/register'
+            "
             class="block w-full text-center py-3 px-4 rounded-xl font-semibold text-sm transition-colors mb-8"
-            [class]="plan.featured
-              ? 'bg-brand-600 text-white hover:bg-brand-700'
-              : 'bg-surface-100 text-surface-700 hover:bg-surface-200'"
+            [class]="
+              plan.featured
+                ? 'bg-brand-600 text-white hover:bg-brand-700'
+                : 'bg-surface-100 text-surface-700 hover:bg-surface-200'
+            "
           >
             {{ plan.cta }}
           </a>
@@ -55,7 +69,15 @@
           <ul class="space-y-3 flex-1">
             @for (feature of plan.features; track feature) {
               <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 mt-0.5 shrink-0" [class]="plan.featured ? 'text-brand-600' : 'text-accent-500'" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <svg
+                  class="w-5 h-5 mt-0.5 shrink-0"
+                  [class]="plan.featured ? 'text-brand-600' : 'text-accent-500'"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
                 <span class="text-sm text-surface-600">{{ feature }}</span>
@@ -91,7 +113,9 @@
             <tr class="border-b border-surface-100">
               <td class="py-4 pr-4 text-sm text-surface-700">{{ row.feature }}</td>
               <td class="py-4 px-4 text-sm text-surface-600 text-center">{{ row.free }}</td>
-              <td class="py-4 px-4 text-sm text-surface-600 text-center font-medium">{{ row.pro }}</td>
+              <td class="py-4 px-4 text-sm text-surface-600 text-center font-medium">
+                {{ row.pro }}
+              </td>
               <td class="py-4 pl-4 text-sm text-surface-600 text-center">{{ row.enterprise }}</td>
             </tr>
           }
@@ -122,7 +146,9 @@
 <!-- CTA -->
 <section class="py-20 bg-gradient-to-br from-brand-600 to-brand-800">
   <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Start your free account today</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+      Start your free account today
+    </h2>
     <p class="mt-4 text-lg text-brand-200">No credit card required. Upgrade when you're ready.</p>
     <a
       href="/auth/register"

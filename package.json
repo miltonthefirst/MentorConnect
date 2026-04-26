@@ -18,7 +18,6 @@
     "serve:ssr:website": "node dist/website/server/server.mjs",
     "-- TEST (all) --": "",
     "test": "ng test website && ng test mentee-portal && ng test mentor-portal && ng test admin-portal && ng test auth && ng test ui && ng test data-access && ng test utils && ng test discovery",
-
     "-- TEST (individual) --": "",
     "test:website": "ng test website",
     "test:mentee": "ng test mentee-portal",

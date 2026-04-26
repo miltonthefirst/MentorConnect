@@ -1,6 +1,6 @@
 name: 🧠 Architecture / Design Proposal
 description: Propose a technical approach before you start building. Read CONTRIBUTING.md for the Proposal Process.
-labels: ["discussion", "architecture"]
+labels: ['discussion', 'architecture']
 body:
   - type: markdown
     attributes:

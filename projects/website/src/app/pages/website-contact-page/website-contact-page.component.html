@@ -1,10 +1,10 @@
 <!-- Hero -->
-<section class="relative bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 pt-32 pb-20 sm:pt-40 sm:pb-24">
+<section
+  class="relative bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 pt-32 pb-20 sm:pt-40 sm:pb-24"
+>
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
     <span class="text-sm font-semibold text-accent-300 uppercase tracking-wide">Contact</span>
-    <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-      Get in touch
-    </h1>
+    <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Get in touch</h1>
     <p class="mt-6 text-lg text-brand-200 max-w-2xl mx-auto leading-relaxed">
       Have questions, feedback, or a partnership idea? We'd love to hear from you.
     </p>
@@ -19,14 +19,24 @@
       <div class="lg:col-span-2">
         <h2 class="text-2xl font-bold text-surface-900 mb-6">Let's connect</h2>
         <p class="text-surface-600 leading-relaxed mb-8">
-          Whether you're a student, mentor, or organization, we're here to help. Reach out and our team will get back to you within 24 hours.
+          Whether you're a student, mentor, or organization, we're here to help. Reach out and our
+          team will get back to you within 24 hours.
         </p>
 
         <div class="space-y-6">
           @for (info of contactInfo; track info.label) {
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <div
+                class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="info.icon" />
                 </svg>
               </div>
@@ -49,7 +59,11 @@
                 class="w-10 h-10 rounded-lg bg-surface-100 text-surface-600 flex items-center justify-center hover:bg-brand-50 hover:text-brand-600 transition-colors"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path [attr.fill-rule]="social.fillRule" [attr.d]="social.icon" [attr.clip-rule]="social.clipRule" />
+                  <path
+                    [attr.fill-rule]="social.fillRule"
+                    [attr.d]="social.icon"
+                    [attr.clip-rule]="social.clipRule"
+                  />
                 </svg>
               </a>
             }
@@ -62,8 +76,17 @@
         <div class="p-8 sm:p-10 rounded-2xl bg-surface-50 border border-surface-200">
           @if (submitted()) {
             <div class="text-center py-12">
-              <div class="w-16 h-16 mx-auto rounded-full bg-accent-100 text-accent-600 flex items-center justify-center mb-6">
-                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <div
+                class="w-16 h-16 mx-auto rounded-full bg-accent-100 text-accent-600 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>

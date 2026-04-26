@@ -34,7 +34,7 @@ Closes #<!-- issue number -->
 <!-- Delete this section if not applicable. -->
 
 | Before | After |
-|--------|-------|
+| ------ | ----- |
 |        |       |
 
 ## Self-Review Checklist

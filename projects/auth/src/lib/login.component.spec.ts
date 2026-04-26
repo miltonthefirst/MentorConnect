@@ -10,10 +10,7 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [LoginComponent],
-      providers: [
-        provideRouter([]),
-        { provide: FIREBASE_AUTH, useValue: {} },
-      ],
+      providers: [provideRouter([]), { provide: FIREBASE_AUTH, useValue: {} }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);

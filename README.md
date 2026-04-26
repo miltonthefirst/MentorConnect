@@ -111,15 +111,16 @@ Library imports are mapped via `tsconfig.json` path aliases (e.g. `@mentor-conne
 
 ### 🌍 Environment Files
 
-| File | Committed | Purpose |
-|------|-----------|--------|
-| `environments/environment.ts` | ✅ Yes | Default — points to local Firebase Emulators |
-| `environments/environment.example.ts` | ✅ Yes | Template — copy this to create real env files |
-| `environments/environment.dev.ts` | ❌ No | Firebase Development project |
-| `environments/environment.test.ts` | ❌ No | Firebase Test / Staging project |
-| `environments/environment.prod.ts` | ❌ No | Firebase Production project |
+| File                                  | Committed | Purpose                                       |
+| ------------------------------------- | --------- | --------------------------------------------- |
+| `environments/environment.ts`         | ✅ Yes    | Default — points to local Firebase Emulators  |
+| `environments/environment.example.ts` | ✅ Yes    | Template — copy this to create real env files |
+| `environments/environment.dev.ts`     | ❌ No     | Firebase Development project                  |
+| `environments/environment.test.ts`    | ❌ No     | Firebase Test / Staging project               |
+| `environments/environment.prod.ts`    | ❌ No     | Firebase Production project                   |
 
 Angular's `fileReplacements` in `angular.json` swaps `environment.ts` with the correct file at build time:
+
 - `ng build <app>` → uses `environment.prod.ts` (production configuration)
 - `ng build <app> --configuration dev-env` → uses `environment.dev.ts`
 - `ng build <app> --configuration test-env` → uses `environment.test.ts`

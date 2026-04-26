@@ -12,7 +12,8 @@ export class WebsiteHowItWorksPage {
     {
       number: 1,
       title: 'Create your profile',
-      description: 'Tell us about your goals, interests, and what you want to learn. Our smart matching uses this to find your ideal mentor.',
+      description:
+        'Tell us about your goals, interests, and what you want to learn. Our smart matching uses this to find your ideal mentor.',
       details: [
         'Takes less than 2 minutes',
         'Specify your learning goals and preferred topics',
@@ -25,7 +26,8 @@ export class WebsiteHowItWorksPage {
     {
       number: 2,
       title: 'Get matched with a mentor',
-      description: 'Our algorithm analyzes your profile and pairs you with mentors who have the expertise and experience you need.',
+      description:
+        'Our algorithm analyzes your profile and pairs you with mentors who have the expertise and experience you need.',
       details: [
         'Browse recommended mentors or search manually',
         'View mentor profiles, ratings, and specializations',
@@ -38,7 +40,8 @@ export class WebsiteHowItWorksPage {
     {
       number: 3,
       title: 'Start your sessions',
-      description: 'Book your first session, connect via built-in video, and start making progress on your goals immediately.',
+      description:
+        'Book your first session, connect via built-in video, and start making progress on your goals immediately.',
       details: [
         'Flexible scheduling - book times that work for you',
         'Built-in video calls, notes, and goal tracking',
@@ -69,23 +72,28 @@ export class WebsiteHowItWorksPage {
   protected readonly faqs = [
     {
       question: 'Is MentorConnect free for students?',
-      answer: 'Yes! Students can create an account and get matched for free. We offer a generous free tier with limited sessions per month, and affordable premium plans for more access.',
+      answer:
+        'Yes! Students can create an account and get matched for free. We offer a generous free tier with limited sessions per month, and affordable premium plans for more access.',
     },
     {
       question: 'How are mentors vetted?',
-      answer: 'Every mentor goes through a verification process. We check professional credentials, conduct interviews, and continuously monitor feedback from mentees to ensure quality.',
+      answer:
+        'Every mentor goes through a verification process. We check professional credentials, conduct interviews, and continuously monitor feedback from mentees to ensure quality.',
     },
     {
       question: 'How long are mentorship sessions?',
-      answer: 'Sessions are typically 30 or 60 minutes, depending on what works best for both the mentor and mentee. You set the agenda together.',
+      answer:
+        'Sessions are typically 30 or 60 minutes, depending on what works best for both the mentor and mentee. You set the agenda together.',
     },
     {
       question: 'Can I switch mentors?',
-      answer: 'Absolutely. If you feel like a different mentor would be a better fit, you can browse our directory and switch at any time - no questions asked.',
+      answer:
+        'Absolutely. If you feel like a different mentor would be a better fit, you can browse our directory and switch at any time - no questions asked.',
     },
     {
       question: 'What industries are covered?',
-      answer: 'We have mentors across 40+ industries including tech, design, finance, healthcare, marketing, and many more. If your field isn\'t listed, reach out and we\'ll find someone for you.',
+      answer:
+        "We have mentors across 40+ industries including tech, design, finance, healthcare, marketing, and many more. If your field isn't listed, reach out and we'll find someone for you.",
     },
   ];
 }
