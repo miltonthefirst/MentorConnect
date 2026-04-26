@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-
 @Component({
   selector: 'mc-website-about-page',
   changeDetection: ChangeDetectionStrategy.OnPush,

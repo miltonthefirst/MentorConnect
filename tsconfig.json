@@ -4,11 +4,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "auth": ["./dist/auth"],
-      "data-access": ["./dist/data-access"],
-      "discovery": ["./dist/discovery"],
-      "ui": ["./dist/ui"],
-      "utils": ["./dist/utils"],
+      "auth": ["./projects/auth/src/public-api.ts"],
+      "data-access": ["./projects/data-access/src/public-api.ts"],
+      "discovery": ["./projects/discovery/src/public-api.ts"],
+      "ui": ["./projects/ui/src/public-api.ts"],
+      "utils": ["./projects/utils/src/public-api.ts"],
       "environments/environment": ["./environments/environment"]
     },
     "strict": true,

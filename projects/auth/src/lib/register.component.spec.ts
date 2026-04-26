@@ -10,10 +10,7 @@ describe('RegisterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RegisterComponent],
-      providers: [
-        provideRouter([]),
-        { provide: FIREBASE_AUTH, useValue: {} },
-      ],
+      providers: [provideRouter([]), { provide: FIREBASE_AUTH, useValue: {} }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegisterComponent);

@@ -62,11 +62,7 @@ export class AuthService {
     }
   }
 
-  async registerWithEmail(
-    email: string,
-    password: string,
-    displayName: string,
-  ): Promise<boolean> {
+  async registerWithEmail(email: string, password: string, displayName: string): Promise<boolean> {
     this._error.set(null);
     try {
       const credential = await createUserWithEmailAndPassword(this.auth, email, password);

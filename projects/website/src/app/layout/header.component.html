@@ -1,8 +1,15 @@
-<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/80 border-b border-surface-200/60">
-  <nav class="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16" aria-label="Main navigation">
+<header
+  class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/80 border-b border-surface-200/60"
+>
+  <nav
+    class="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16"
+    aria-label="Main navigation"
+  >
     <!-- Logo -->
     <a routerLink="/" class="flex items-center gap-2.5 group">
-      <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-brand-600 text-white font-bold text-base transition-transform group-hover:scale-105">
+      <div
+        class="flex items-center justify-center w-9 h-9 rounded-xl bg-brand-600 text-white font-bold text-base transition-transform group-hover:scale-105"
+      >
         M
       </div>
       <span class="text-xl font-bold text-surface-900">MentorConnect</span>
@@ -49,11 +56,22 @@
       aria-controls="mobile-menu"
       aria-label="Toggle navigation menu"
     >
-      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
         @if (mobileMenuOpen()) {
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         } @else {
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
         }
       </svg>
     </button>
@@ -61,7 +79,10 @@
 
   <!-- Mobile menu -->
   @if (mobileMenuOpen()) {
-    <div id="mobile-menu" class="md:hidden border-t border-surface-200/60 bg-white/95 backdrop-blur-md">
+    <div
+      id="mobile-menu"
+      class="md:hidden border-t border-surface-200/60 bg-white/95 backdrop-blur-md"
+    >
       <ul class="px-4 py-3 space-y-1">
         @for (link of navLinks; track link.path) {
           <li>

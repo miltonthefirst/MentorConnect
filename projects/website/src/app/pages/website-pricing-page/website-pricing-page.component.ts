@@ -74,19 +74,23 @@ export class WebsitePricingPage {
   protected readonly faqs = [
     {
       question: 'Can I cancel my subscription anytime?',
-      answer: 'Yes, you can cancel your Pro subscription at any time. You\'ll retain access until the end of your billing period.',
+      answer:
+        "Yes, you can cancel your Pro subscription at any time. You'll retain access until the end of your billing period.",
     },
     {
       question: 'Is there a free trial for Pro?',
-      answer: 'Yes! Pro comes with a 14-day free trial. No credit card required to start. You can upgrade or stay on Free after the trial ends.',
+      answer:
+        'Yes! Pro comes with a 14-day free trial. No credit card required to start. You can upgrade or stay on Free after the trial ends.',
     },
     {
       question: 'Do mentors pay anything?',
-      answer: 'No. MentorConnect is completely free for mentors. We believe in making it easy for professionals to give back.',
+      answer:
+        'No. MentorConnect is completely free for mentors. We believe in making it easy for professionals to give back.',
     },
     {
       question: 'Are there student discounts?',
-      answer: 'Yes, we offer a 50% student discount on the Pro plan. Just verify your student email during signup.',
+      answer:
+        'Yes, we offer a 50% student discount on the Pro plan. Just verify your student email during signup.',
     },
   ];
 }
