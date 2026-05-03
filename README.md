@@ -196,4 +196,3 @@ npm run format:check  # Check formatting without writing
 - [Angular Documentation](https://angular.dev/docs)
 - [Firebase Documentation](https://firebase.google.com/docs/web/setup)
 - [Tailwind CSS v4 Documentation](https://tailwindcss.com/docs)
-- [Our Design System / Figma Link] _(Add link here)_
